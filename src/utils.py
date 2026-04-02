@@ -1,5 +1,4 @@
 import pandas as pd
-import csv
 
 def load_titles(filepath:str) -> pd.DataFrame:
     data = pd.read_csv(filepath)
