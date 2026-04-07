@@ -1,0 +1,33 @@
+# Environnement virtuel
+.venv
+venv
+env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.swp
+
+# Dossiers inutiles
+node_modules/
+dist/
+build/
+
+# Config locale
+.env
