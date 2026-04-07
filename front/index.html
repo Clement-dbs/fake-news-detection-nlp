@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Détecteur de fake news</h1>
+   <p>
+        Ce projet propose une API et une interface web permettant de détecter automatiquement si un texte est une information réelle ou une fake news. 
+        Le modèle repose sur un algorithme NLP entraîné sur un dataset de titres réels et mensongers
+    </p>
+    <p>
+        L'API expose plusieurs endpoints exploitables :
+        <ul>
+            <li><strong>GET /health</strong> : Vérifie que l'API est opérationnelle.</li>
+            <li><strong>POST /predict</strong> : Permet de soumettre un texte et de recevoir la prédiction du modèle. Le corps de la requête doit contenir un JSON avec le champ <code>text</code>.</li>
+        </ul>
+        La réponse inclut le label prédit ("REAL" ou "FAKE"), la confiance du modèle, et les scores détaillés pour chaque classe.
+        <p>PS: Le modèle à été entrainé sur des données issus de la langue anglaise et ne fonctionne donc que dans cette langue</p>
+    </p>
+
+    <section class="card">
+      <form id="prediction-form" class="form">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="1" placeholder="Exemple : SHOCKING: Government hiding truth about water supply" required></textarea>
+
+        <button type="submit">Vérifier</button>
+      </form>
+    </section>
+
+    <section id="result-card" class="card hidden">
+      <h2>Résultat</h2>
+      <div id="result"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
